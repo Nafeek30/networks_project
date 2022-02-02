@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  
+  <title>Welcome to Dr. Park's Networks Course</title>
+  <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Raleway:100,500,600,800" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript">
+	<!-- reference : https://www.w3schools.com/js/tryit.aspfilename=tryjs_cookie_username--> 
+    function getCookie(cname) {
+			let name = cname + "=";
+			let decodedCookie = decodeURIComponent(document.cookie);
+			let ca = decodedCookie.split(';');
+			for (let i = 0; i < ca.length; i++) {
+					let c = ca[i];
+					while (c.charAt(0) == ' ') {
+							c = c.substring(1);
+					}
+					if(c.indexOf(name) == 0) {
+							return c.substring(name.length, c.length);
+					}
+			}
+			return "";
+	}
+	
+	// Set session cookie
+	function setSessionCookie() {
+		document.cookie = "cookieName=sessionCookie; path=/;";
+		//console.log(document.cookie);
+	}
+	
+	// Set second custom cookie
+	function secondCustomCookie() {
+		document.cookie = "secondCookie=customCookie; path=/;";
+		//console.log(document.cookie);
+	}
+	
+	
+	function checkCookie() {
+			// Creates a new session cookie when user loads '/' path
+			setSessionCookie();
+			
+			
+			let user = getCookie("name");
+			
+			if(user != "") {
+				alert("Welcome again " + user);
+			}
+	}
+	</script>
+</head>
+
+
+<body onload="checkCookie()">
+
+  <div class="header">
+    <h1>Understanding Networked Applications</h1>
+  </div>
+
+  <div class="overview">
+    <h3>Overview</h3>
+	<p> The best way to build effective networked applications is to understand the building blocks that a network can provide and how those blocks can interact with each other. - Larry Peterson </p>
+  <br>
+  </div>
+  <div class="reference_model">
+
+  <ul>
+    <li>
+      <h2>Application Layer</h2>
+	  <p> </p>
+      <a href="#">Learn More about Application Layer</a>
+    </li>
+    <li>
+      <h2>Transport Layer</h2>
+	  <p> </p>
+      <a href="#">Learn More about Transport Layer</a>
+    </li>
+    <li>
+      <h2>Network Layer</h2>
+	  <p></p>
+      <a href="#">Learn More about Network Layer</a>
+    </li>
+    <li>
+      <h2>Data Link Layer</h2>
+	  <p></p>
+      <a href="#">Learn More about Data Link Layer</a>
+    </li>
+    <li>
+      <h2>Physical Layer</h2>
+	  <p></p>
+      <a href="#">Learn More about Physical Layer</a>
+    </li>
+  </ul>
+  </div>
+
+  <div class="contact">
+    	<a href="contact.html"><p id='contactText'>Contact us </p></a> 
+	<input type="button" value="Add custom cookie" onclick="secondCustomCookie()" />
+		  
+  </div>
+  
+  <script>
+  	document.getElementById('contactText').onmouseover = function () {
+  		this.style.color = '#E4BB97';
+  	}
+  	
+  	document.getElementById('contactText').onmouseleave = function () {
+  		this.style.color = '#938E89';
+  	}
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
